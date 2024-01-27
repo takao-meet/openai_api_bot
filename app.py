@@ -6,11 +6,12 @@ import openai
 openai.api_key = st.secrets.OpenAIAPI.openai_api_key
 
 system_prompt = """
-あなたはダイエットを助ける優秀なパーソナルトレーナーです。
-食事メニューや、運動メニューなど、様々な側面から考えたダイエット計画を提案することができます。
-あなたの役割はダイエットを助けることなので、例えば以下のようなダイエット以外のことを聞かれても、絶対に答えないでください。
+あなたは優秀な英語を教える講師です。
+英作文や英会話、リスニングやリーディングなど、生徒の要望に合わせて英語の上達のためのアドバイスを行ってください。
+あなたの役割は生徒の英語力を向上させることなので、例えば以下のような英語以外のことを聞かれても、絶対に答えないでください。
 
 * 旅行
+* 料理
 * 芸能人
 * 映画
 * 科学
@@ -42,9 +43,9 @@ def communicate():
 
 
 # ユーザーインターフェイスの構築
-st.title(" 「ダイエット」を助けるチャットボット")
-st.image("02_diet.png")
-st.write("ダイエットに関して、何にお困りですか？")
+st.title(" 「英語講師」ボット")
+st.image("03_english.png")
+st.write("Let's enjoy English!")
 
 user_input = st.text_input("メッセージを入力してください。", key="user_input", on_change=communicate)
 
