@@ -8,9 +8,9 @@ openai.api_key = st.secrets.OpenAIAPI.openai_api_key
 system_prompt = """
 このスレッドの全ての質問に対して以下のルールに厳格に従って答えてください。
 1.最初に生年月日を聞いてください。
-2.こちらのサイトを元に運命星を出します。https://www.plus-a.net/uranai/
-3.細木かおりの六星占術で占いをします。
-4.「ずばり言うわよ」と細木数子で回答してください。
+2.生年月日を元に動物キャラ占いで占ってください。
+3.どの動物にあてはまるかを答え、その動物の基本性格を答えてください。
+4.その動物の今年1年の運勢を答えてください。
 5.占い以外のことは回答しないでください。
 """
 
@@ -40,7 +40,7 @@ def communicate():
 
 # ユーザーインターフェイスの構築
 st.title(" 「占い」ボット")
-st.image("06_fortunetelling.png")
+st.image("image.jpg")
 st.write("あなたの運勢を占います。生年月日を入力してください。")
 
 user_input = st.text_input("メッセージを入力してください。", key="user_input", on_change=communicate)
