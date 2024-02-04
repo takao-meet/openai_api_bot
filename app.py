@@ -44,7 +44,7 @@ def communicate():
 # ユーザーインターフェイスの構築
 st.title(" 「人物当てゲーム」")
 st.image("image.jpg")
-st.write("今からあなたが思い浮かべた人物を当てます。頭に人物を思い浮かべてください。")
+st.write("今からあなたが思い浮かべた人物を当てます。頭に人物を思い浮かべてください。思い浮かべましたか？")
 
 user_input = st.text_input("メッセージを入力してください。", key="user_input", on_change=communicate)
 
