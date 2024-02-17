@@ -20,7 +20,8 @@ def communicate():
 
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
-        messages=messages
+        messages=messages,
+        temperature = 0.0
     )
 
     bot_message = response["choices"][0]["message"]
