@@ -19,7 +19,8 @@ def communicate():
     messages.append(user_message)
 
     response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
+        model=st.secrets["gpt_version"],
+        temperature=st.secrets["temperature"],
         messages=messages
     )
 
@@ -30,9 +31,9 @@ def communicate():
 
 
 # ユーザーインターフェイスの構築
-st.title(" 「占い」ボット")
-st.image("06_fortunetelling.png")
-st.write("あなたの運勢を占います。生年月日を入力してください。")
+st.title(st.secrets.AppSettings.title)
+st.image("image01.jpg")
+st.write(st.secrets.AppSettings.body)
 
 user_input = st.text_input("メッセージを入力してください。", key="user_input", on_change=communicate)
 
